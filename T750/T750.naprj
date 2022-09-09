@@ -1,0 +1,216 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project>
+  <PropertyGroup Condition="">
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <AssemblyName>T750</AssemblyName>
+    <BackupACC>True</BackupACC>
+    <BackupFSR>True</BackupFSR>
+    <BackupPCHBUF>True</BackupPCHBUF>
+    <BackupSTATUS>True</BackupSTATUS>
+    <Bank0Only>False</Bank0Only>
+    <BankselOptLevel>2</BankselOptLevel>
+    <BuildCCompilerVersion>NYC_NY8 1.44 [Build: 220628.00]</BuildCCompilerVersion>
+    <BuildNYASMVersion>NYASM 2.35 [Build: 220628.00]</BuildNYASMVersion>
+    <BuildNYIDEVersion>NYIDE 4.71 [Build: 220630.00]</BuildNYIDEVersion>
+    <CCompilerInstallDir>C:\Nyquest\NYC_NY8</CCompilerInstallDir>
+    <ChipId>NY8B062E</ChipId>
+    <ClientName>T750</ClientName>
+    <CodeOptimization>Enable</CodeOptimization>
+    <Configuration>Debug</Configuration>
+    <FreezeMode>True</FreezeMode>
+    <GenAsmListFile>True</GenAsmListFile>
+    <GenListFile>True</GenListFile>
+    <GenMapFile>True</GenMapFile>
+    <IncludePath></IncludePath>
+    <InitEEPROM>True</InitEEPROM>
+    <InitializeBss>True</InitializeBss>
+    <IsBankselOpt>True</IsBankselOpt>
+    <LibraryFiles></LibraryFiles>
+    <NYASMInstallDir>C:\Nyquest\NYASM\</NYASMInstallDir>
+    <NYIDEInstallDir>C:\Nyquest\NYIDE\</NYIDEInstallDir>
+    <OutputType>bin</OutputType>
+    <Platform>CNy8</Platform>
+    <ProjectGuid>{6506B5A1-8991-49CE-8D71-7D919FAF0225}</ProjectGuid>
+    <ProjectOptionChanged>False</ProjectOptionChanged>
+    <ReservedInterruptRam>2</ReservedInterruptRam>
+    <ReservedRam>10</ReservedRam>
+    <RootNamespace>PWM_Output</RootNamespace>
+    <TrimSetting>+ 0%</TrimSetting>
+    <WarningMsgCode0>32797</WarningMsgCode0>
+    <WarningMsgCode1>112</WarningMsgCode1>
+    <WarningMsgCode10>84</WarningMsgCode10>
+    <WarningMsgCode11>84</WarningMsgCode11>
+    <WarningMsgCode2>84</WarningMsgCode2>
+    <WarningMsgCode3>84</WarningMsgCode3>
+    <WarningMsgCode4>84</WarningMsgCode4>
+    <WarningMsgCode5>84</WarningMsgCode5>
+    <WarningMsgCode6>84</WarningMsgCode6>
+    <WarningMsgCode7>84</WarningMsgCode7>
+    <WarningMsgCode8>84</WarningMsgCode8>
+    <WarningMsgCode9>84</WarningMsgCode9>
+    <WarningMsgCount>0</WarningMsgCount>
+    <WarningMsgFileName0>D:\work\2022\T750\Code\220704-增加自检 - 副本\T750\T750\main.c</WarningMsgFileName0>
+    <WarningMsgFileName1>D:\work\2022\T750\Code\220704-增加自检\T750\T750\main.c</WarningMsgFileName1>
+    <WarningMsgFileName10>D:\work\2022\T750\Code\220704-增加自检\T750\T750\main.c</WarningMsgFileName10>
+    <WarningMsgFileName11>D:\work\2022\T750\Code\220704-增加自检\T750\T750\main.c</WarningMsgFileName11>
+    <WarningMsgFileName2>D:\work\2022\T750\Code\220704-增加自检\T750\T750\main.c</WarningMsgFileName2>
+    <WarningMsgFileName3>D:\work\2022\T750\Code\220704-增加自检\T750\T750\main.c</WarningMsgFileName3>
+    <WarningMsgFileName4>D:\work\2022\T750\Code\220704-增加自检\T750\T750\main.c</WarningMsgFileName4>
+    <WarningMsgFileName5>D:\work\2022\T750\Code\220704-增加自检\T750\T750\main.c</WarningMsgFileName5>
+    <WarningMsgFileName6>D:\work\2022\T750\Code\220704-增加自检\T750\T750\main.c</WarningMsgFileName6>
+    <WarningMsgFileName7>D:\work\2022\T750\Code\220704-增加自检\T750\T750\main.c</WarningMsgFileName7>
+    <WarningMsgFileName8>D:\work\2022\T750\Code\220704-增加自检\T750\T750\main.c</WarningMsgFileName8>
+    <WarningMsgFileName9>D:\work\2022\T750\Code\220704-增加自检\T750\T750\main.c</WarningMsgFileName9>
+    <WarningMsgLineNumber0>961</WarningMsgLineNumber0>
+    <WarningMsgLineNumber1>1050</WarningMsgLineNumber1>
+    <WarningMsgLineNumber10>1047</WarningMsgLineNumber10>
+    <WarningMsgLineNumber11>1081</WarningMsgLineNumber11>
+    <WarningMsgLineNumber2>1047</WarningMsgLineNumber2>
+    <WarningMsgLineNumber3>1050</WarningMsgLineNumber3>
+    <WarningMsgLineNumber4>1047</WarningMsgLineNumber4>
+    <WarningMsgLineNumber5>1050</WarningMsgLineNumber5>
+    <WarningMsgLineNumber6>1045</WarningMsgLineNumber6>
+    <WarningMsgLineNumber7>1048</WarningMsgLineNumber7>
+    <WarningMsgLineNumber8>1082</WarningMsgLineNumber8>
+    <WarningMsgLineNumber9>1044</WarningMsgLineNumber9>
+    <WarningMsgMessage0>LVR is off. It may result in IC failure if supply voltage falls below IC operating voltage.</WarningMsgMessage0>
+    <WarningMsgMessage1>function 'TestmodeLedflashFunc' implicit declaration</WarningMsgMessage1>
+    <WarningMsgMessage10>'auto' variable 'TestmodeLedflashFunc' may be used before initialization</WarningMsgMessage10>
+    <WarningMsgMessage11>'auto' variable 'TestmodeKeyScan' may be used before initialization</WarningMsgMessage11>
+    <WarningMsgMessage2>'auto' variable 'TestmodeLedflashFunc' may be used before initialization</WarningMsgMessage2>
+    <WarningMsgMessage3>'auto' variable 'TestmodeLedflashFunc' may be used before initialization</WarningMsgMessage3>
+    <WarningMsgMessage4>'auto' variable 'TestmodeLedflashFunc' may be used before initialization</WarningMsgMessage4>
+    <WarningMsgMessage5>'auto' variable 'TestmodeLedflashFunc' may be used before initialization</WarningMsgMessage5>
+    <WarningMsgMessage6>'auto' variable 'TestmodeLedflashFunc' may be used before initialization</WarningMsgMessage6>
+    <WarningMsgMessage7>'auto' variable 'TestmodeLedflashFunc' may be used before initialization</WarningMsgMessage7>
+    <WarningMsgMessage8>'auto' variable 'TestmodeKeyScan' may be used before initialization</WarningMsgMessage8>
+    <WarningMsgMessage9>'auto' variable 'TestmodeLedflashFunc' may be used before initialization</WarningMsgMessage9>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>False</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>None</DebugType>
+    <Optimize>True</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="main.c" EntryPoint="false" MetaData="" />
+    <None Include="T750.cb" EntryPoint="false" MetaData="" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Client: T750" EntryPoint="false" MetaData="" />
+    <Reference Include="Config Block: T750.cb" EntryPoint="false" MetaData="" />
+    <Reference Include="IC Body: NY8B062E" EntryPoint="false" MetaData="" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="C:\Nyquest\NY8_Example_Code\include\NY8 C\ny8_constant.h" EntryPoint="false" MetaData="Dependency Files\ny8_constant.h" />
+    <ApplicationDefinition Include="C:\Nyquest\NY8_Example_Code\include\NY8 C\ny8b062e_constant.h" EntryPoint="false" MetaData="Dependency Files\ny8b062e_constant.h" />
+    <ApplicationDefinition Include="C:\Nyquest\NYC_NY8\include\ny8.h" EntryPoint="false" MetaData="Dependency Files\ny8.h" />
+    <ApplicationDefinition Include="C:\Nyquest\NYC_NY8\include\ny8b062e.h" EntryPoint="false" MetaData="Dependency Files\ny8b062e.h" />
+    <ApplicationDefinition Include="C:\Nyquest\NYC_NY8\include\ny8common.h" EntryPoint="false" MetaData="Dependency Files\ny8common.h" />
+    <Folder Include="Dependency Files" EntryPoint="false" MetaData="" />
+  </ItemGroup>
+  <Properties>
+    <Array name="ActionFiles" />
+    <Array name="bookmarks">
+      <Element value="Bookmark|main.c|256|1|True||||||||||" />
+      <Element value="Bookmark|main.c|1019|40|True||||||||||" />
+    </Array>
+    <Array name="DisassemblyPadColumnWidthInfo">
+      <Element value="AddrWidth|60" />
+      <Element value="CodeWidth|140" />
+      <Element value="ArrowWidth|20" />
+    </Array>
+    <Array name="EEPROMOverwriteData" />
+    <Array name="ExternalResource" />
+    <Array name="files">
+      <Element value="main.c|True" />
+      <Element value="C:/Nyquest/NY8_Example_Code/include/NY8 C/ny8b062e_constant.h|False" />
+    </Array>
+    <Array name="InstrumentFiles" />
+    <Array name="MelodyDatabaseFiles" />
+    <Array name="MusicFiles" />
+    <Array name="RegisterPadExpandInfo">
+      <Element value="0|True" />
+      <Element value="100|False" />
+      <Element value="101|False" />
+      <Element value="102|False" />
+      <Element value="103|False" />
+      <Element value="104|False" />
+      <Element value="105|False" />
+      <Element value="106|False" />
+      <Element value="107|False" />
+      <Element value="108|False" />
+      <Element value="109|False" />
+      <Element value="110|False" />
+      <Element value="111|False" />
+      <Element value="112|False" />
+      <Element value="113|False" />
+      <Element value="114|False" />
+      <Element value="115|False" />
+      <Element value="116|False" />
+      <Element value="117|False" />
+      <Element value="118|False" />
+      <Element value="119|False" />
+      <Element value="120|False" />
+      <Element value="121|False" />
+      <Element value="122|False" />
+      <Element value="123|False" />
+      <Element value="124|False" />
+      <Element value="125|False" />
+      <Element value="126|False" />
+      <Element value="127|False" />
+      <Element value="1|True" />
+      <Element value="200|False" />
+      <Element value="201|False" />
+      <Element value="202|False" />
+      <Element value="203|False" />
+      <Element value="204|False" />
+      <Element value="205|False" />
+      <Element value="206|False" />
+      <Element value="2|True" />
+      <Element value="300|False" />
+      <Element value="301|False" />
+      <Element value="302|False" />
+      <Element value="303|False" />
+      <Element value="304|False" />
+      <Element value="305|False" />
+      <Element value="306|False" />
+      <Element value="307|False" />
+      <Element value="308|False" />
+      <Element value="309|False" />
+      <Element value="310|False" />
+      <Element value="311|False" />
+      <Element value="312|False" />
+      <Element value="313|False" />
+      <Element value="314|False" />
+      <Element value="315|False" />
+      <Element value="316|False" />
+      <Element value="317|False" />
+      <Element value="318|False" />
+      <Element value="319|False" />
+      <Element value="320|False" />
+      <Element value="321|False" />
+      <Element value="322|False" />
+      <Element value="323|False" />
+    </Array>
+    <Array name="UpdateableResources" />
+    <Array name="VoiceFiles" />
+    <Array name="VRModule" />
+    <Array name="WatchItemInfo">
+      <Element value="u16AdcResult|" />
+      <Element value="Keypresstime|" />
+    </Array>
+    <Array name="WatchPadColumnWidthInfo">
+      <Element value="NameWidth|201" />
+      <Element value="AddrWidth|50" />
+      <Element value="ValWidth|50" />
+      <Element value="PageWidth|50" />
+    </Array>
+  </Properties>
+</Project>

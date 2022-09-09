@@ -1,0 +1,17 @@
+﻿
+Nyquest IDE Solution File, Format Version 1.00
+# NYIDE 4.70.0.2557
+Project("{608D5F73-6C2E-489F-8ED6-C0FBCCEB586F}") = "T750", "T750\T750.naprj", "{EFA692DC-B7E8-421F-A3A0-0D502BD242F4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any = Debug|Any
+		Release|Any = Release|Any
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EFA692DC-B7E8-421F-A3A0-0D502BD242F4}.Debug|Any.Build.0 = Debug|Any
+		{EFA692DC-B7E8-421F-A3A0-0D502BD242F4}.Debug|Any.ActiveCfg = Debug|Any
+		{EFA692DC-B7E8-421F-A3A0-0D502BD242F4}.Release|Any.Build.0 = Release|Any
+		{EFA692DC-B7E8-421F-A3A0-0D502BD242F4}.Release|Any.ActiveCfg = Release|Any
+	EndGlobalSection
+EndGlobal
