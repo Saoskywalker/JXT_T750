@@ -266,7 +266,7 @@ void Pwm_Init(void)
 //	TMR1		= 0xFF;						// TMR1[9:0]=3FFH
 	TMR2		= 0x11;//0x12;						// TMR2[9:0]=3FFH
 //	PWM1DUTY	= 0x01;						// PWM1DUTY[9:0]=001H
-	PWM2DUTY	= 0x03;//0x04;						// PWM2DUTY[9:0]=3FFH
+	PWM2DUTY	= 0x07;//0x04;						// PWM2DUTY[9:0]=3FFH
 //	T1CR2		= C_PS1_Dis | C_TMR1_ClkSrc_Inst;	// Prescaler 1:1, Timer1 clock source is instruction clock
 	T2CR2		= C_PS2_Dis | C_TMR2_ClkSrc_Inst;	// Prescaler 1:1, Timer2 clock source is instruction clock
 //	T1CR1		= C_PWM1_En | C_PWM1_Active_Hi | C_TMR1_Reload | C_TMR1_En;	// Enable PWM1, Active_High, Non-Stop mode, Reloaded from TMR1[9:0], Enable Timer1
