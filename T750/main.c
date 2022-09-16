@@ -159,9 +159,9 @@ volatile unsigned char Timecnt_50ms;
 volatile unsigned char Timecnt_100ms;
 volatile unsigned char SleepWakeupcnt;
 volatile unsigned char PoweronDelay2Stimecnt;
-volatile unsigned char SystemStatus;
+volatile unsigned char SystemStatus; //开关机状态
 volatile unsigned char MotorStatus;
-volatile unsigned char LedStatus;
+volatile unsigned char LedStatus; //LED闪烁模式
 volatile unsigned char MotorRuntime;
 volatile unsigned char Send_Timer_Cnt_10S;
 volatile unsigned char Send_Timer_Cnt_50S;
@@ -188,7 +188,7 @@ volatile unsigned char LedFlashtimeCnt;
 volatile unsigned char chargeDetectTimecnt;
 volatile unsigned char chargeFullDetectTimecnt;
 volatile unsigned char NochargeDetectTimecnt;
-volatile unsigned int Keypresstime;
+volatile unsigned int Keypresstime; //按键消抖计数
 volatile unsigned int BKeypresstime;
 volatile unsigned long MotorRunlongtimeCnt;
 volatile unsigned int MotorRunintvaltimeCnt;
@@ -202,7 +202,7 @@ volatile unsigned char OverCurrentTimeCnt;
 volatile unsigned char MotorOnDelayTimeCnt;
 volatile unsigned char Led_Pwm_Cnt_Cycle;
 volatile unsigned char Led_Pwm_Cnt_DutyBuffer;
-volatile unsigned char FlashTimeCnt;
+volatile unsigned char FlashTimeCnt; //led闪烁次数计数
 
 volatile unsigned char WeakWater;
 volatile unsigned char Timecnt_5ms;
@@ -212,9 +212,9 @@ volatile unsigned char SelfTestModeStep;
 volatile unsigned char TestmodeLedflashTimecnt;
 
 __sbit f_Power_ON_AD = SystemFlag1 : 0;
-__sbit f_short_key_WuHua_on = SystemFlag1 : 1;
+__sbit f_short_key_WuHua_on = SystemFlag1 : 1; //短按确认标志
 __sbit f_wakeupfromKey = SystemFlag1 : 2;
-__sbit KeyLongPressflag = SystemFlag1 : 3;
+__sbit KeyLongPressflag = SystemFlag1 : 3; //长按确认标志
 __sbit f_EnableSleep = SystemFlag1 : 4;
 __sbit Time_50S_Flag = SystemFlag1 : 5;
 __sbit Time_10S_Flag = SystemFlag1 : 6;
@@ -224,17 +224,17 @@ __sbit f_Timer2ms = SystemFlag2 : 0;
 __sbit f_Timer10ms = SystemFlag2 : 1;
 __sbit f_Timer50ms = SystemFlag2 : 2;
 __sbit f_Timer100ms = SystemFlag2 : 3;
-__sbit f_BatChargFull = SystemFlag2 : 4;
-__sbit f_BatCharging = SystemFlag2 : 5;
+__sbit f_BatChargFull = SystemFlag2 : 4; //电池充满电标志
+__sbit f_BatCharging = SystemFlag2 : 5; //电池充电中标志
 __sbit ModeLedOnFlag = SystemFlag2 : 6;
 __sbit f_TestmodeLedflash = SystemFlag2 : 7;
 
 __sbit f_wakeupfromCharge = SystemFlag3 : 0;
 __sbit f_Time_5ms = SystemFlag3 : 1;
-__sbit f_LowBat = SystemFlag3 : 2;
+__sbit f_LowBat = SystemFlag3 : 2; //低电标志
 __sbit f_PowerOnInit = SystemFlag3 : 3;
-__sbit f_SelfTestMode = SystemFlag3 : 4;
-__sbit f_LoestBat = SystemFlag3 : 5;
+__sbit f_SelfTestMode = SystemFlag3 : 4; //进入自检标志
+__sbit f_LoestBat = SystemFlag3 : 5; //掉电标志
 __sbit f_CandoSelfTest = SystemFlag3 : 6;
 __sbit f_sleepDelay = SystemFlag3 : 7;
 
@@ -281,19 +281,31 @@ void Testmode(void);
 void IO_Init(void)
 {
 	PCON = C_WDT_En | C_LVR_En; // Enable WDT & LVR
-	DISI();
-	// PORTB I/O state
-	IOSTB = C_PB3_Input; // PB2 & PB1作为输入模式
-						 // BPHCON 	= (char)~( C_PB0_PHB | C_PB1_PHB );
-	// BPHCON 	= (char)~( C_PB2_PHB );											// PB2和PB1IO上拉
-	PORTB = 0x03; // PB 输出低
+	DISI(); //close all interrupt
 
-	// PORTA I/O state
-	PORTA = 0x01;												   // PA1 & PA2 输出高，其他输出低
-	AWUCON = C_PA4_Wakeup | C_PA7_Wakeup;						   // 使能PA6唤醒功能
-	IOSTA = C_PA4_Input | C_PA5_Input | C_PA7_Input | C_PA1_Input; // PA0 &  PA4 & PA6 & PA7作为输入模式
+	// PORT A I/O state 0:output 1:input def:1
+	// PB0:OUTPUT; PB0:OUTPUT; PB1:OUTPUT; PB2:OUTPUT; PB3:INPUT; PB4:OUTPUT; PB5:OUTPUT;
+	IOSTB = C_PB3_Input;
+	
+	//portB up res set 0:enable 1:disable def: 1
+	// BPHCON 	= (char)~( C_PB0_PHB | C_PB1_PHB );
+	// BPHCON 	= (char)~( C_PB2_PHB );	
+	
+	//port B data, def:x
+	PORTB = 0x03; //PB0:1; PB1:1; PB2:0; PB3:0; PB4:0; PB5:0;
+
+	//port A data, def:x
+	PORTA = 0x01; // PA0:1; PA1:0; PA2:0; PA3:0; PA4:0; PA5:0; PA6:0; PA7:0;
+
+	AWUCON = C_PA4_Wakeup | C_PA7_Wakeup; //使能PA4 PA7唤醒功能
+
+	// PORT A I/O state 0:output 1:input def:1
+	// PB0:OUTPUT; PA0:OUTPUT; PA1:INPUT; PA2:OUTPUT; PA3:OUTPUT; PA4:INPUT; PA5:INPUT; PA6:OUTPUT; PA7:INPUT
+	IOSTA = C_PA4_Input | C_PA5_Input | C_PA7_Input | C_PA1_Input; 
+
+	//portA up res set 0:enable 1:disable def: 1
 	// APHCON 	= (char)~((C_PA4_PHB)|(C_PA5_PHB)|(C_PA7_PHB));
-	APHCON = (char)~(C_PA4_PHB | C_PA5_PHB); // PA6上拉
+	APHCON = (char)~(C_PA4_PHB | C_PA5_PHB); // PA4,PA5开上拉
 }
 
 //--------------- PWM init --------------------------------------------
@@ -465,7 +477,7 @@ void Keyscan(void)
 			if (Keypresstime >= 2) //消抖25ms
 			{
 				Keypresstime = 0;
-				f_short_key_WuHua_on = 1;
+				f_short_key_WuHua_on = 1; //确认按下
 			}
 		}
 		else
@@ -510,7 +522,7 @@ void Keyscan(void)
 		}
 		else
 		{
-			if ((f_short_key_WuHua_on) && (KeyLongPressflag == 0))
+			if ((f_short_key_WuHua_on) && (KeyLongPressflag == 0)) //短按处理
 			{
 				if (f_sleepDelay == 0)
 				{
@@ -879,7 +891,7 @@ void Flashled(unsigned char LedType)
 			if (f_LoestBat)
 			{
 				FlashTimeCnt++;
-				if (FlashTimeCnt >= 3)
+				if (FlashTimeCnt >= 3) //闪3次进入关机睡眠
 				{
 					FlashTimeCnt = 0;
 					SystemStatus = PowerOFF;
@@ -993,7 +1005,7 @@ void OffAllExtDevice(void)
 //--------------------------------------------------------------------------
 void Sleep(void)
 {
-	if ((f_EnableSleep) && (f_PowerOnInit == 0))
+	if ((f_EnableSleep) && (f_PowerOnInit == 0)) //上电时, 待初始化所有数据后才进入睡眠
 	{
 		f_wakeupfromCharge = 0;
 		f_wakeupfromKey = 0;
