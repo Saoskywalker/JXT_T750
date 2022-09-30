@@ -549,10 +549,23 @@ void Keyscan(void)
 							}
 							else if (WorkMode == 2)
 							{
-								//	SystemStatus = PowerOFF;
+								SystemStatus = PowerOFF;
+								WorkMode = 0;
+								LedStatus = 0;
+								EN_5V = 0;
+								T2CR1 &= ~(C_PWM2_En);
+								MotorPWM = MotorPwmOFF;
 								f_EnableSleep = 1; //¹Ø»úË¯Ãß
-								//	WorkMode = 0;
-								//	EN_5V = 0;
+
+								LED_Red = OFF;
+								LED_Blue = OFF;
+							}
+							else
+							{
+								f_EnableSleep = 0;
+								StartWuHuaFLag = 1;
+								WorkMode = 1;
+								EN_5V = 1;
 							}
 						}
 					}
@@ -803,6 +816,12 @@ void LedDisplayFunc(void)
 		{
 			FlashTimeCnt = 0;
 			LedStatus = LedStatus_Twostep; //³äÂú
+		}
+		else if (WorkMode == 0)
+		{
+			LED_Green = OFF;
+			LED_Blue = OFF;
+			LedStatus = LedStatus_Fourstep; //È±µçÉÁË¸
 		}
 	}
 	else
